@@ -1,0 +1,5 @@
+package modelo;
+
+public enum EnumFormacao {
+	SEM_ESCOLARIDADE, ENSINO_FUNDAMENTAL, ENSINO_MEDIO, ENSINO_SUPERIOR;
+}

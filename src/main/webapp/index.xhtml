@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head></h:head>
+<h:body>
+	<h1>Cadastro de Usuario</h1>
+
+	<h:form>
+		<p:fieldset legend="Dados Pessoais" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="5">
+				<img src="imagem/usuario.png" />
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:outputLabel value="Nome:" />
+					<p:inputText value="#{usuarioBean.nome}" />
+
+					<h:outputLabel value="Nascimento:" />
+					<p:calendar id="popup" value="#{usuarioBean.dataNascimento}" />
+
+					<p:outputLabel value="Sexo:" />
+					<p:selectOneRadio value="#{usuarioBean.sexo}">
+						<f:selectItems value="#{usuarioBean.sexos}" var="sexo"
+							itemValue="#{sexo}" itemLabel="#{sexo}" />
+					</p:selectOneRadio>
+
+
+					<p:outputLabel value="Formacao:" />
+					<p:selectOneMenu value="#{usuarioBean.formacao}">
+						<f:selectItem itemLabel="Selecione" />
+
+						<f:selectItems value="#{usuarioBean.formacoes}" var="formacao"
+							itemValue="#{formacao}" itemLabel="#{formacao}" />
+
+					</p:selectOneMenu>
+
+
+
+					<p:outputLabel value="Profissao:" />
+					<p:selectOneMenu>
+						<f:selectItem itemLabel="Selecione" />
+						
+						<f:selectItems value="#{usuarioBean.profissoes}" var="profissao"
+							itemValue="#{profissao}" itemLabel="#{profissao}" />
+					</p:selectOneMenu>
+
+
+					<h:outputLabel value="CPF:" />
+					<p:inputMask mask="999.999.999-99" value="usuarioBean.cpf" />
+				</h:panelGrid>
+			</h:panelGrid>
+
+		</p:fieldset>
+
+		<p:fieldset legend="Contato" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="5">
+				<img src="imagem/contato.png" />
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:outputLabel value="Email" />
+					<p:inputText />
+
+					<h:outputLabel value="Telefone" />
+					<p:inputText />
+
+					<h:outputLabel value="Celular" />
+					<p:inputText />
+
+					<h:outputLabel value="Skype" />
+					<p:inputText />
+				</h:panelGrid>
+			</h:panelGrid>
+		</p:fieldset>
+
+		<p:fieldset legend="Endereco" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="5">
+				<img src="imagem/endereco.png" />
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:outputLabel value="Logradouro" />
+					<p:inputText />
+
+					<h:outputLabel value="Numero" />
+					<p:inputText />
+
+					<h:outputLabel value="Bairro" />
+					<p:inputText />
+
+					<h:outputLabel value="Complemento" />
+					<p:inputText />
+
+					<h:outputLabel value="CEP" />
+					<p:inputText />
+
+					<h:outputLabel value="Cidade" />
+					<p:inputText />
+				</h:panelGrid>
+
+			</h:panelGrid>
+		</p:fieldset>
+
+
+		<h:commandButton value="Salvar Usuario" action="#{usuarioBean.salvar}" />
+		<h:commandButton value="Limpar Dados" />
+	</h:form>
+
+</h:body>
+</html>
